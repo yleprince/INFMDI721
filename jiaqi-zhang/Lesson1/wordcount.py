@@ -72,6 +72,7 @@ def print_words(filename):
     for word_tuple in word_list:
         print(word_tuple[0] + " " + word_tuple[1])
 
+
 def print_top(filename):
     word_list = []
     for k, v in read_file(filename).items():
@@ -84,21 +85,24 @@ def print_top(filename):
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
+
+
 def main():
-  if len(sys.argv) != 3:
-    print ('usage: ./wordcount.py {--count | --topcount} file')
+    if len(sys.argv) != 3:
+        print('usage: ./wordcount.py {--count | --topcount} file')
+        sys.exit(1)
+
+    option = sys.argv[1]
+    filename = sys.argv[2]
+
+    if option == '--count':
+        print_words(filename)
+    elif option == '--topcount':
+        print_top(filename)
+    else:
+        print('unknown option: ' + option)
     sys.exit(1)
 
-  option = sys.argv[1]
-  filename = sys.argv[2]
-
-  if option == '--count':
-    print_words(filename)
-  elif option == '--topcount':
-    print_top(filename)
-  else:
-    print('unknown option: ' + option)
-    sys.exit(1)
 
 if __name__ == '__main__':
-  main()
+    main()
