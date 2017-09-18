@@ -101,7 +101,7 @@ def main():
         print_top(filename)
     else:
         print('unknown option: ' + option)
-    sys.exit(1)
+        sys.exit(1)
 
 
 if __name__ == '__main__':
