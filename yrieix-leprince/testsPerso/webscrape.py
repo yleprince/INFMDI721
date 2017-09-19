@@ -31,4 +31,4 @@ record = open("log.txt", "a")
 date = ct() #current time
 record.write(channelName+","+nbSubs+","+nbViews+","+date+"\n")
 
-print( channelName + "\t" + nbSubs + " abonnés \t" + nbViews + " vues")
+#print( channelName + "\t" + nbSubs + " abonnés \t" + nbViews + " vues")
