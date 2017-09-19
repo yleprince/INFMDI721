@@ -1,1 +1,1 @@
-print ("This is a git test 2")
+print ("This is a git test")
