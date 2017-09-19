@@ -63,25 +63,18 @@ def read_file(filename):
 
 
 def print_words(filename):
-    word_list = []
-    for k, v in read_file(filename).items():
-        word_list.append((k, str(v)))
-
-    word_list.sort()
+    word_list = sorted(read_file(filename).items())
 
     for word_tuple in word_list:
-        print(word_tuple[0] + " " + word_tuple[1])
+        print(word_tuple[0] + " " + str(word_tuple[1]))
 
 
 def print_top(filename):
-    word_list = []
-    for k, v in read_file(filename).items():
-        word_list.append((k, str(v)))
-
-    word_list.sort(key=lambda x: (-1*int(x[1]), x[0]))
+    word_list = sorted(read_file(filename).items(),
+                       key=lambda x: (-1*int(x[1]), x[0]))
 
     for word_tuple in word_list[:20]:
-        print(word_tuple[0] + " " + word_tuple[1])
+        print(word_tuple[0] + " " + str(word_tuple[1]))
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
